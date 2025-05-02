@@ -19,6 +19,7 @@ jobs:
             npm run test
 
         - name: Deploy
+          if: github.ref == 'refs/heads/develop'
           env:
             DEPLOY_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
           run: |
